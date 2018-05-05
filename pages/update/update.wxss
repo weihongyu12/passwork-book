@@ -1,0 +1,7 @@
+.input-placeholder{
+  color: #b9b9b9
+}
+
+.cell-class{
+  background-color: #fafafa;
+}

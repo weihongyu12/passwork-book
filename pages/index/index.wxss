@@ -1,0 +1,66 @@
+/**index.wxss**/
+
+.page {
+  padding-bottom: 160rpx;
+}
+
+.searchbar-result {
+  margin-top: 0;
+  font-size: 14px;
+}
+
+.searchbar-result:before {
+  display: none;
+}
+
+.weui-cell {
+  padding: 12px 15px 12px 35px;
+}
+
+.bottom-button {
+  background-color: #fff;
+}
+
+.icon {
+  vertical-align: middle;
+  margin-right: 8rpx;
+  color: #000;
+}
+
+.badge {
+  display: block;
+  padding: 0.25em 0.4em;
+  font-weight: bold;
+  line-height: 1;
+  color: #fff;
+  text-align: center;
+  white-space: nowrap;
+  float: left;
+}
+
+.badge-0 {
+  display: inline-block;
+  background-color: rgb(178, 178, 178);
+  border-radius: 50rpx;
+  font-size: 13px;
+  vertical-align: baseline;
+  margin-right: 5rpx;
+  margin-bottom: 5rpx;
+  float: none;
+}
+
+.badge-1 {
+  background-color: rgb(9, 187, 7);
+}
+
+.badge-2 {
+  background-color: rgb(16, 174, 255);
+}
+
+.badge-3 {
+  background-color: rgb(255, 190, 0);
+}
+
+.badge-4 {
+  background-color: rgb(247, 98, 96);
+}

@@ -1,0 +1,62 @@
+<!--index.wxml-->
+<view class="page">
+  <view class="page__bd">
+    <scroll-view scroll-y bindscrolltolower="loadMore" upper-threshold="20" style="height:{{scrollHeight}}px;">
+      <!--搜索框-->
+      <view class="weui-search-bar">
+        <view class="weui-search-bar__form">
+          <view class="weui-search-bar__box">
+            <icon class="weui-icon-search_in-box" type="search" size="14"></icon>
+            <input type="text" class="weui-search-bar__input" placeholder="搜索" value="{{inputVal}}" focus="{{inputShowed}}" bindinput="inputTyping" bindconfirm="searchData" />
+            <view class="weui-icon-clear" wx:if="{{inputVal.length > 0}}" bindtap="clearInput">
+              <icon type="clear" size="14"></icon>
+            </view>
+          </view>
+          <label class="weui-search-bar__label" hidden="{{inputShowed}}" bindtap="showInput">
+            <icon class="weui-icon-search" type="search" size="14"></icon>
+            <view class="weui-search-bar__text">搜索</view>
+          </label>
+        </view>
+        <view class="weui-search-bar__cancel-btn" hidden="{{!inputShowed}}" bindtap="hideInput">取消</view>
+      </view>
+
+      <!--搜索提示-->
+      <view class="weui-cells searchbar-result" wx:if="{{inputVal.length > 0}}">
+        <view class="weui-cell" wx:for="{{search}}" bindtap="searchData" data-text="{{item}}">
+          <view class="weui-cell__bd">
+            <view>{{item}}</view>
+          </view>
+        </view>
+      </view>
+      <!--类型列表-->
+      <view class="pt-4 px-3">
+        <text class="badge badge-0 mr-3" wx:for="{{classes}}" data-text="{{item}}" bindtap="searchClass">{{item}}</text>
+      </view>
+      <!--正文列表-->
+      <view class="weui-panel weui-panel_access">
+        <view class="weui-panel__bd">
+          <navigator url="/pages/update/update?id={{accountList.id}}" class="weui-media-box weui-media-box_text" wx:for="{{accountList}}" wx:for-item="accountList">
+            <view class="weui-media-box__title weui-media-box__title_in-text">{{accountList.name}}</view>
+            <view class="weui-media-box__desc mb-3">
+              <text class="fa fa-user icon"></text>{{accountList.account}}</view>
+            <view class="weui-media-box__desc">
+              <text class="fa fa-lock icon"></text>
+              <view class="d-inline-block align-middle">
+                <text wx:for="{{accountList.password_tips}}" wx:key="unique" wx:for-index="idx" class="badge badge-{{idx%4+1}}">{{accountList.password_tips[idx]}}</text>
+              </view>
+            </view>
+          </navigator>
+        </view>
+      </view>
+      <!--加载-->
+      <view class="weui-loadmore" wx:if="{{loadmore}}">
+        <view class="weui-loading"></view>
+        <view class="weui-loadmore__tips">正在加载</view>
+      </view>
+    </scroll-view>
+    <!--按钮-->
+    <view class="fixed-bottom p-4 bottom-button" bindtap="addPassword">
+      <button class="weui-btn" type="primary">添加密码</button>
+    </view>
+  </view>
+</view>

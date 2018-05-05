@@ -1,0 +1,13 @@
+{
+  "pages":[
+    "pages/index/index",
+    "pages/add/add",
+    "pages/update/update"
+  ],
+  "window":{
+    "backgroundTextStyle":"light",
+    "navigationBarBackgroundColor": "#fff",
+    "navigationBarTitleText": "密码记忆助理",
+    "navigationBarTextStyle":"black"
+  }
+}
